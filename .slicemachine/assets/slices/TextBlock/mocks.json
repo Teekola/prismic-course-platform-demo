@@ -1,0 +1,24 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "text_block",
+    "items": [],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Recontextualize next-generation synergies",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Cillum eiusmod amet officia dolor esse aute commodo. Incididunt eiusmod cupidatat Lorem Lorem voluptate nisi do. Et incididunt anim ex sit eiusmod ipsum.",
+          "spans": []
+        }
+      ]
+    }
+  }
+]
