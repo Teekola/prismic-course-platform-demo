@@ -1,9 +1,15 @@
 // pages/[uid].js
 
 import { createClient } from "../prismicio";
+import { SliceZone } from "@prismicio/react";
+import { components } from "../slices";
 
 export default function Page({ page }: any) {
-   return <h1>{page.uid}</h1>;
+   return (
+      <>
+         <SliceZone slices={page.data.slices} components={components} />
+      </>
+   );
 }
 
 export async function getStaticProps({ params, previewData }: any) {
@@ -13,5 +19,12 @@ export async function getStaticProps({ params, previewData }: any) {
 
    return {
       props: { page },
+   };
+}
+
+export async function getStaticPaths() {
+   return {
+      paths: [{ params: { uid: "page1" } }, { params: { uid: "page2" } }],
+      fallback: false,
    };
 }

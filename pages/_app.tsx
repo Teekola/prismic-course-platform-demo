@@ -7,6 +7,7 @@ import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { linkResolver, repositoryName } from "../prismicio";
+import { H1, P } from "components/textComponents";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
    return (
@@ -17,6 +18,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                <a {...props}>{children}</a>
             </Link>
          )}
+         richTextComponents={{
+            heading1: ({ children }) => <H1>{children}</H1>,
+            paragraph: ({ children }) => <P>{children}</P>,
+         }}
       >
          <PrismicPreview repositoryName={repositoryName}>
             <GlobalStyle />

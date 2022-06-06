@@ -1,8 +1,26 @@
 {
   "_cts": {
-    "homepage": {}
+    "homepage": {},
+    "page": {}
   },
   "slices": {
-    "TextBlock": {}
+    "TextBlock": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "TwoColumnsTextImage": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    }
   }
 }
