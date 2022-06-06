@@ -1,13 +1,17 @@
-// pages/[uid].js
-
 import { createClient } from "../prismicio";
 import { SliceZone } from "@prismicio/react";
 import { components } from "../slices";
 
-export default function Homepage({ document }: any) {
+import Head from "next/head";
+
+export default function Homepage({ slices, seoTitle, seoDescription }: any) {
    return (
       <>
-         <SliceZone slices={document.data.slices} components={components} />
+         <Head>
+            <title>{seoTitle}</title>
+            <meta name="description" content={seoDescription} />
+         </Head>
+         <SliceZone slices={slices} components={components} />
       </>
    );
 }
@@ -18,6 +22,10 @@ export async function getStaticProps({ previewData }: any) {
    const document = await client.getSingle("homepage");
 
    return {
-      props: { document },
+      props: {
+         slices: document.data.slices,
+         seoTitle: document.data.metaTitle,
+         seoDescription: document.data.metaDescription,
+      },
    };
 }

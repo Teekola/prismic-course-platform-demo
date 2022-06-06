@@ -5,11 +5,20 @@ import { SliceZone } from "@prismicio/react";
 import { components } from "../slices";
 import * as prismicH from "@prismicio/helpers";
 
+import Head from "next/head";
 import NotFound from "./404";
 
-export default function Page({ page }: any) {
-   if (page)
-      return <SliceZone slices={page.data.slices} components={components} />;
+export default function Page({ slices, seoTitle, seoDescription }: any) {
+   if (slices && seoTitle && seoDescription)
+      return (
+         <>
+            <Head>
+               <title>{seoTitle}</title>
+               <meta name="description" content={seoDescription} />
+            </Head>
+            <SliceZone slices={slices} components={components} />
+         </>
+      );
    else {
       return <NotFound />;
    }
@@ -30,7 +39,11 @@ export async function getStaticProps({ params, previewData }: any) {
    try {
       const page = await client.getByUID("page", params.uid);
       return {
-         props: { page },
+         props: {
+            slices: page.data.slices,
+            seoTitle: page.data.seoTitle,
+            seoDescription: page.data.seoDescription,
+         },
       };
    } catch (error) {
       console.log(error);
