@@ -1,5 +1,3 @@
-// pages/[uid].js
-
 import { createClient, linkResolver } from "../prismicio";
 import { SliceZone } from "@prismicio/react";
 import { components } from "../slices";
@@ -7,6 +5,9 @@ import * as prismicH from "@prismicio/helpers";
 
 import Head from "next/head";
 import NotFound from "./404";
+
+const defaultTitle = "Prismic Demo";
+const defaultDesc = "Prismic Demo on projekti Prismic.io:ntestailua varten.";
 
 export default function Page({ slices, seoTitle, seoDescription }: any) {
    if (slices && seoTitle && seoDescription)
@@ -41,8 +42,10 @@ export async function getStaticProps({ params, previewData }: any) {
       return {
          props: {
             slices: page.data.slices,
-            seoTitle: page.data.seoTitle,
-            seoDescription: page.data.seoDescription,
+            seoTitle: page.data.seoTitle ? page.data.seoTitle : defaultTitle,
+            seoDescription: page.data.seoDescription
+               ? page.data.seoTitle
+               : defaultDesc,
          },
       };
    } catch (error) {
