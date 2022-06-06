@@ -1,30 +1,39 @@
 // pages/[uid].js
 
-import { createClient } from "../prismicio";
+import { createClient, linkResolver } from "../prismicio";
 import { SliceZone } from "@prismicio/react";
 import { components } from "../slices";
+import * as prismicH from "@prismicio/helpers";
+
+import NotFound from "./404";
 
 export default function Page({ page }: any) {
-   return (
-      <>
-         <SliceZone slices={page.data.slices} components={components} />
-      </>
-   );
+   if (page)
+      return <SliceZone slices={page.data.slices} components={components} />;
+   else {
+      return <NotFound />;
+   }
+}
+
+export async function getStaticPaths() {
+   const client = createClient();
+   const documents = await client.getAllByType("page");
+   return {
+      paths: documents.map((doc) => prismicH.asLink(doc, linkResolver)),
+      fallback: true,
+   };
 }
 
 export async function getStaticProps({ params, previewData }: any) {
    const client = createClient({ previewData });
 
-   const page = await client.getByUID("page", params.uid);
-
-   return {
-      props: { page },
-   };
-}
-
-export async function getStaticPaths() {
-   return {
-      paths: [{ params: { uid: "page1" } }, { params: { uid: "page2" } }],
-      fallback: false,
-   };
+   try {
+      const page = await client.getByUID("page", params.uid);
+      return {
+         props: { page },
+      };
+   } catch (error) {
+      console.log(error);
+      return { props: {} };
+   }
 }
