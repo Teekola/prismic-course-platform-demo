@@ -1,7 +1,12 @@
 {
   "_cts": {
     "homepage": {},
-    "page": {}
+    "page": {},
+    "navbar": {
+      "navlinks": {}
+    },
+    "kurssi": {},
+    "coursesPage": {}
   },
   "slices": {
     "TextBlock": {

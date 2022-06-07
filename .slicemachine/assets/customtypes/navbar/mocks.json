@@ -1,0 +1,44 @@
+{
+  "id": "fe50882e-555f-4af0-bceb-aba9e409ecdc",
+  "uid": "voluptatem-qui-asperiores",
+  "type": "navbar",
+  "data": {
+    "logo": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?w=900&h=500&fit=crop"
+    },
+    "navlinks": [
+      {
+        "navlink": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        },
+        "label": [
+          {
+            "type": "paragraph",
+            "text": "Aliqua veniam nulla consectetur. Nulla quis minim non eiusmod.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "navlink": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        },
+        "label": [
+          {
+            "type": "paragraph",
+            "text": "Aute est cupidatat id qui mollit. Officia non ipsum aliqua pariatur. Dolor magna minim qui officia sint elit amet proident mollit occaecat in irure minim minim labore.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}
