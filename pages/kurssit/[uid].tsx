@@ -51,7 +51,7 @@ export default function Page({ slices, navbar, video }: any) {
 
 export async function getStaticPaths() {
    const client = createClient();
-   const courses = await client.getAllByType("Kurssi");
+   const courses = await client.getAllByType("kurssi");
    return {
       paths: courses.map((course: any) =>
          prismicH.asLink(course, linkResolver)

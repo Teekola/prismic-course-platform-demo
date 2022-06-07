@@ -14,6 +14,8 @@ export function linkResolver(doc) {
 			return `/${doc.uid}`
 		case 'coursesPage':
 			return "/kurssit"
+		case 'kurssi':
+			return `/kurssit/${doc.uid}`
 		default:
 			return null
 	}
