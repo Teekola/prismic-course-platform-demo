@@ -19,6 +19,9 @@
           "choices": {
             "text_block": {
               "type": "SharedSlice"
+            },
+            "kurssit": {
+              "type": "SharedSlice"
             }
           }
         }

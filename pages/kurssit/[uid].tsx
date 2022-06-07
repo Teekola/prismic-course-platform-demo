@@ -9,7 +9,6 @@ import Layout from "components/layout";
 import NotFound from "../404";
 
 const StyledVideoContainer = styled.div`
-   width: 50%;
    .video {
       position: relative;
       padding-top: 25px;
@@ -22,6 +21,19 @@ const StyledVideoContainer = styled.div`
       left: 0;
       width: 100%;
       height: 100%;
+   }
+
+   @media screen and (min-width: 900px) {
+      max-width: 900px;
+   }
+`;
+
+const StyledTextContainer = styled.div`
+   display: grid;
+   gap: 1rem;
+
+   h1 {
+      line-height: 1;
    }
 `;
 
@@ -44,7 +56,9 @@ export default function Page({ slices, navbar, video }: any) {
                dangerouslySetInnerHTML={{ __html: video.html }}
             />
          </StyledVideoContainer>
-         <SliceZone slices={slices} components={components} />
+         <StyledTextContainer>
+            <SliceZone slices={slices} components={components} />
+         </StyledTextContainer>
       </Layout>
    );
 }

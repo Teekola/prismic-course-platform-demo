@@ -24,7 +24,7 @@ export default function CoursesPage({ slices, navbar }: any) {
    );
 }
 
-export async function getStaticProps({ params, previewData }: any) {
+export async function getStaticProps({ previewData }: any) {
    const client = createClient({ previewData });
    const navbar = await client.getSingle("navbar");
 

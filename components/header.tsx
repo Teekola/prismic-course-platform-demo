@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { useDebouncedCallback } from "use-debounce";
-import Link from "next/link";
 
 const StyledHeader = styled.header`
    position: fixed;
@@ -13,6 +12,7 @@ const StyledHeader = styled.header`
    transition: all 150ms ease;
    width: 100%;
    background: steelblue;
+   z-index: 1;
 
    .container {
       max-width: 1500px;

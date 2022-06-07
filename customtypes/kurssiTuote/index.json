@@ -1,0 +1,59 @@
+{
+  "id": "kurssiTuote",
+  "label": "Kurssi Tuote",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        }
+      },
+      "nimi": {
+        "type": "Text",
+        "config": {
+          "label": "Nimi",
+          "placeholder": "Tuotteen nimi"
+        }
+      },
+      "hinta": {
+        "type": "Text",
+        "config": {
+          "label": "Hinta",
+          "placeholder": "Hinta (€) esim. 12.50"
+        }
+      },
+      "kuva": {
+        "type": "Image",
+        "config": {
+          "label": "Kuva",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "lyhytKuvaus": {
+        "type": "Text",
+        "config": {
+          "label": "Lyhyt Kuvaus",
+          "placeholder": "Lyhyt tuotekuvaus"
+        }
+      }
+    },
+    "Myyntisivu": {
+      "slices1": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "text_block": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

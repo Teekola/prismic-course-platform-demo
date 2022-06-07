@@ -6,6 +6,8 @@ const StyledLayout = styled.div`
    max-width: 1500px;
    margin: 100px auto;
    padding: 0 1rem;
+   display: grid;
+   gap: 1rem;
 `;
 
 export default function Layout({ navbar, children }: PropsWithChildren<any>) {

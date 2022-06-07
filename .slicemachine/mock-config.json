@@ -6,7 +6,8 @@
       "navlinks": {}
     },
     "kurssi": {},
-    "coursesPage": {}
+    "coursesPage": {},
+    "kurssiTuote": {}
   },
   "slices": {
     "TextBlock": {
@@ -24,6 +25,25 @@
     "TwoColumnsTextImage": {
       "default": {
         "primary": {},
+        "items": {}
+      }
+    },
+    "Kurssit": {
+      "default": {
+        "primary": {
+          "kuvaus": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "otsikko": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        },
         "items": {}
       }
     }

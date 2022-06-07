@@ -1,0 +1,19 @@
+{
+  "id": "0e0f2697-e512-407d-aee8-2a8a9368bc0f",
+  "uid": "voluptatem-aspernatur-id",
+  "type": "kurssiTuote",
+  "data": {
+    "nimi": "innovate robust architectures",
+    "hinta": "leverage plug-and-play e-services",
+    "kuva": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
+    },
+    "lyhytKuvaus": "optimize holistic interfaces"
+  }
+}
